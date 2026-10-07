@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Storybook Nursery Rhymes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="device-iphone">
+  <!-- Top Device Switcher Toolbar -->
+  <div class="device-toolbar" id="deviceToolbar">
+    <div class="toolbar-brand">
+      <span class="star-icon">⭐</span>
+      <span class="toolbar-title">Storybook Nursery Rhymes</span>
+    </div>
+    <div class="device-selector">
+      <button class="device-btn active" data-device="iphone">📱 iPhone</button>
+      <button class="device-btn" data-device="ipad">📟 iPad</button>
+      <button class="device-btn" data-device="responsive">🖥️ Responsive</button>
+    </div>
+  </div>
+
+  <!-- Device Container Frame -->
+  <div class="device-wrapper" id="deviceWrapper">
+    <div class="device-frame" id="deviceFrame">
+      <!-- Status Bar Notch / Dynamic Island -->
+      <div class="device-notch">
+        <div class="notch-island"></div>
+      </div>
+
+      <!-- App Screen Content -->
+      <main class="app-screen" id="appScreen">
+
+        <!-- SCREEN 1: HOME -->
+        <section class="screen-view active" id="homeScreen">
+          <!-- Top Header -->
+          <header class="home-header">
+            <div class="home-brand">
+              <span class="star-mascot">⭐</span>
+              <h1 class="brand-title">Nursery Rhymes</h1>
+            </div>
+            <button class="round-btn btn-purple" id="btnOpenSettings" aria-label="Settings">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="3"></circle>
+                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+              </svg>
+            </button>
+          </header>
+
+          <div class="home-scrollable">
+            <!-- Hero Artwork -->
+            <div class="hero-container">
+              <div class="hero-image-wrap">
+                <img src="assets/ui/hero_girl_puppy.png" alt="Girl and puppy in sunny meadow" class="hero-img">
+              </div>
+              <div class="cloud-banner">
+                <span class="banner-star">⭐</span>
+                <span class="banner-text">Sing, play &amp; discover</span>
+                <span class="banner-star">⭐</span>
+              </div>
+            </div>
+
+            <!-- Start Singing CTA Button -->
+            <button class="cta-start-singing" id="btnStartSinging">
+              <div class="play-triangle-icon"></div>
+              <span>Start Singing</span>
+            </button>
+
+            <!-- Your Favorites Section -->
+            <section class="home-favorites-section">
+              <h2 class="section-title">Your favorites</h2>
+              <div class="favorites-container-box" id="homeFavoritesContainer">
+                <!-- Dynamically populated or filled with seed cards -->
+              </div>
+            </section>
+          </div>
+        </section>
+
+        <!-- SCREEN 2: EXPLORE RHYMES LIBRARY -->
+        <section class="screen-view" id="libraryScreen">
+          <!-- Wooden Header -->
+          <div class="wooden-header">
+            <button class="round-btn btn-pink" id="btnLibraryBack" aria-label="Back to Home">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+            <h2 class="wooden-header-title">Explore Rhymes</h2>
+            <div class="header-spacer"></div>
+          </div>
+
+          <!-- Search Field -->
+          <div class="search-bar-wrap">
+            <div class="search-input-box">
+              <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <input type="text" id="searchInput" placeholder="Find a rhyme" autocomplete="off" autocorrect="off">
+              <button class="search-clear-btn hidden" id="searchClearBtn" aria-label="Clear Search">✕</button>
+            </div>
+          </div>
+
+          <!-- Category Chips -->
+          <div class="category-chips-scroll">
+            <div class="category-chips" id="categoryChips">
+              <button class="chip-btn active" data-category="All">All</button>
+              <button class="chip-btn" data-category="Animals">Animals</button>
+              <button class="chip-btn" data-category="Bedtime">Bedtime</button>
+              <button class="chip-btn" data-category="Action & Movement">Action &amp; Movement</button>
+              <button class="chip-btn" data-category="Playful">Playful</button>
+            </div>
+          </div>
+
+          <!-- Rhyme Cards Grid -->
+          <div class="library-scrollable">
+            <div class="rhymes-grid" id="rhymesGrid">
+              <!-- Dynamically populated 50 cards -->
+            </div>
+            <div class="empty-results hidden" id="emptyResults">
+              <div class="empty-icon">🔍</div>
+              <h3 class="empty-title">No rhymes found</h3>
+              <p class="empty-desc">Try searching for another rhyme title or clear your filters.</p>
+              <button class="cta-clear-filters" id="btnClearFilters">Clear Filters</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- SCREEN 3: RHYME PLAYER -->
+        <section class="screen-view" id="playerScreen">
+          <!-- Wooden Header -->
+          <div class="wooden-header">
+            <button class="round-btn btn-pink" id="btnPlayerBack" aria-label="Back">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+            <h2 class="wooden-header-title" id="playerHeaderTitle">Twinkle Twinkle</h2>
+            <button class="round-btn btn-pink" id="btnPlayerFavorite" aria-label="Favorite">
+              <svg id="playerHeartIcon" width="22" height="22" viewBox="0 0 24 24" fill="white" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+              </svg>
+            </button>
+          </div>
+
+          <div class="player-scrollable">
+            <!-- Large Artwork -->
+            <div class="player-artwork-wrap">
+              <img id="playerArtwork" src="assets/rhymes/twinkle_twinkle_full.png" alt="Rhyme Artwork" class="player-artwork-img">
+              <div class="missing-audio-badge hidden" id="missingAudioBadge">
+                <span>⚠️ Audio not added yet • In checklist</span>
+              </div>
+            </div>
+
+            <!-- Full Rhyme Title -->
+            <h2 class="player-full-title" id="playerFullTitle">Twinkle Twinkle Little Star</h2>
+
+            <!-- Lyrics Display -->
+            <div class="player-lyrics-box" id="playerLyricsBox">
+              <p class="lyric-line line-1" id="lyricLine1">Twinkle, twinkle, little star</p>
+              <p class="lyric-line line-2" id="lyricLine2">How I wonder what you are</p>
+            </div>
+
+            <!-- Full Lyrics Container (for Lyrics Mode) -->
+            <div class="full-lyrics-box hidden" id="fullLyricsBox">
+              <div id="fullLyricsContent"></div>
+            </div>
+
+            <!-- Watch / Lyrics Tabs -->
+            <div class="player-mode-tabs">
+              <button class="mode-tab-btn active" id="tabWatch" data-mode="watch">
+                <span class="tab-icon">▶</span>
+                <span>Watch</span>
+              </button>
+              <button class="mode-tab-btn" id="tabLyrics" data-mode="lyrics">
+                <span class="tab-icon">🎵</span>
+                <span>Lyrics</span>
+              </button>
+            </div>
+
+            <!-- Seek Slider & Timestamps -->
+            <div class="player-progress-area">
+              <span class="time-label" id="timeElapsed">0:00</span>
+              <div class="progress-track-wrapper" id="progressTrackWrapper">
+                <div class="progress-track-bg"></div>
+                <div class="progress-track-fill" id="progressFill"></div>
+                <div class="progress-thumb" id="progressThumb"></div>
+              </div>
+              <span class="time-label" id="timeDuration">0:00</span>
+            </div>
+
+            <!-- Wooden Playback Controls Panel -->
+            <div class="wooden-controls-panel">
+              <!-- Previous (Purple) -->
+              <button class="ctrl-btn btn-ctrl-purple" id="btnPrevTrack" aria-label="Previous">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                  <polygon points="19 20 9 12 19 4 19 20"></polygon>
+                  <line x1="5" y1="19" x2="5" y2="5" stroke="white" stroke-width="3" stroke-linecap="round"></line>
+                </svg>
+              </button>
+
+              <!-- Play/Pause (Prominent Green) -->
+              <button class="ctrl-btn btn-ctrl-green" id="btnPlayPause" aria-label="Play or Pause">
+                <svg id="playIconSvg" width="32" height="32" viewBox="0 0 24 24" fill="white">
+                  <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>
+                <svg id="pauseIconSvg" class="hidden" width="32" height="32" viewBox="0 0 24 24" fill="white">
+                  <rect x="6" y="4" width="4" height="16" rx="1"></rect>
+                  <rect x="14" y="4" width="4" height="16" rx="1"></rect>
+                </svg>
+              </button>
+
+              <!-- Next (Amber) -->
+              <button class="ctrl-btn btn-ctrl-amber" id="btnNextTrack" aria-label="Next">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                  <polygon points="5 4 15 12 5 20 5 4"></polygon>
+                  <line x1="19" y1="5" x2="19" y2="19" stroke="white" stroke-width="3" stroke-linecap="round"></line>
+                </svg>
+              </button>
+
+              <!-- Repeat (Pink) -->
+              <button class="ctrl-btn btn-ctrl-pink" id="btnRepeat" aria-label="Repeat">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="17 1 21 5 17 9"></polyline>
+                  <path d="M3 11V9a4 4 0 0 1 4-4h14"></path>
+                  <polyline points="7 23 3 19 7 15"></polyline>
+                  <path d="M21 13v2a4 4 0 0 1-4 4H3"></path>
+                </svg>
+                <div class="repeat-active-dot hidden" id="repeatDot"></div>
+              </button>
+            </div>
+
+            <!-- "More Rhymes" Button -->
+            <button class="btn-more-rhymes" id="btnMoreRhymes">
+              <span class="note-icon">🎵</span>
+              <span class="more-text">More Rhymes</span>
+              <span class="chevron-icon">›</span>
+            </button>
+          </div>
+        </section>
+
+        <!-- SCREEN 4: FAVORITES -->
+        <section class="screen-view" id="favoritesScreen">
+          <div class="wooden-header">
+            <button class="round-btn btn-pink" id="btnFavoritesBack" aria-label="Back">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+            <h2 class="wooden-header-title">Your Favorites</h2>
+            <div class="header-spacer"></div>
+          </div>
+
+          <div class="favorites-scrollable">
+            <div class="rhymes-grid" id="favoritesGrid">
+              <!-- Dynamically populated favorite cards -->
+            </div>
+            <div class="empty-favorites hidden" id="emptyFavorites">
+              <div class="empty-icon">💖</div>
+              <h3 class="empty-title">No Favorites Yet</h3>
+              <p class="empty-desc">Explore the rhymes library and tap the heart on any rhyme to save it here.</p>
+              <button class="cta-explore-from-fav" id="btnExploreFromFavorites">Explore Rhymes</button>
+            </div>
+          </div>
+        </section>
+
+      </main>
+
+      <!-- Bottom Floating Ivory Dock Navigation -->
+      <nav class="bottom-dock" id="bottomDock">
+        <button class="dock-tab active" data-target="home">
+          <div class="tab-pill">
+            <svg class="dock-icon" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+            </svg>
+            <span class="tab-label">Home</span>
+          </div>
+        </button>
+
+        <button class="dock-tab" data-target="rhymes">
+          <div class="tab-pill">
+            <svg class="dock-icon" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+            </svg>
+            <span class="tab-label">Rhymes</span>
+          </div>
+        </button>
+
+        <button class="dock-tab" data-target="favorites">
+          <div class="tab-pill">
+            <svg class="dock-icon heart-icon" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+            <span class="tab-label">Favorites</span>
+          </div>
+        </button>
+      </nav>
+
+      <!-- Settings Modal Sheet -->
+      <div class="modal-overlay hidden" id="settingsModal">
+        <div class="modal-sheet">
+          <div class="modal-header">
+            <h3 class="modal-title">Settings</h3>
+            <button class="modal-close-btn" id="btnCloseSettings">Done</button>
+          </div>
+          <div class="modal-body">
+            <div class="settings-group">
+              <h4 class="group-title">Playback Preferences</h4>
+              <label class="setting-row">
+                <span class="setting-label">Autoplay Next Rhyme</span>
+                <input type="checkbox" id="settingAutoplay" checked class="ios-switch">
+              </label>
+              <label class="setting-row">
+                <span class="setting-label">Continuous Repeat</span>
+                <input type="checkbox" id="settingRepeat" class="ios-switch">
+              </label>
+              <label class="setting-row">
+                <span class="setting-label">Sound Effects</span>
+                <input type="checkbox" id="settingSfx" checked class="ios-switch">
+              </label>
+            </div>
+
+            <div class="settings-group">
+              <h4 class="group-title">Appearance &amp; Motion</h4>
+              <label class="setting-row">
+                <span class="setting-label">Reduce Animations</span>
+                <input type="checkbox" id="settingReduceMotion" class="ios-switch">
+              </label>
+            </div>
+
+            <div class="settings-group">
+              <h4 class="group-title">Favorites Management</h4>
+              <button class="btn-danger-reset" id="btnResetFavorites">Reset Saved Favorites</button>
+            </div>
+
+            <div class="settings-group">
+              <h4 class="group-title">About Storybook Nursery Rhymes</h4>
+              <div class="setting-row static">
+                <span class="setting-label">App Version</span>
+                <span class="setting-val">1.0.0 (Build 1)</span>
+              </div>
+              <div class="setting-desc">
+                Crafted with warm storybook illustrations, gentle music-box melodies, and toddler-friendly controls. 100% offline capable with full 50-rhyme catalog.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Real Audio Engine Element -->
+  <audio id="audioPlayer" preload="auto"></audio>
+
+  <script src="app.js"></script>
+</body>
+</html>
